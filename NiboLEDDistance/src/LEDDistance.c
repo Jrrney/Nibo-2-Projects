@@ -6,6 +6,11 @@
 
 #include "main.h"
 
+/**
+ * calculates a color from distance to the object
+ * @param distance to the object
+ * @return calulates color
+ */
 int getDistanceColor(int distance) {
 	// very close
 	if (distance > 200) {
@@ -21,6 +26,12 @@ int getDistanceColor(int distance) {
 	}
 }
 
+/**
+ * shows distance via leds
+ *
+ * @param distance to an object
+ * @param sensor the id of the distance given sensor
+ */
 void showDistance(int distance, int sensor) {
 	int distance_color = getDistanceColor(distance);
 
@@ -46,6 +57,9 @@ void showDistance(int distance, int sensor) {
 	}
 }
 
+/**
+ * inits all components
+ */
 void init() {
 	// Aktivierung von Interrupts
 	sei();

@@ -6,12 +6,25 @@
 
 #include "main.h"
 
+/**
+ * Calculates the distance to stop, before crashing an object
+ *
+ * @param distance the current distance to an object
+ * @param speed the current speed
+ *
+ * @return true, if the nibo should stop driving, false otherwise
+ */
 bool stop(int distance, int speed) {
 	int stop_distance_diff = ((float) speed * 0.75) * 112.93 / 40.0;
 	int stop_distance = 247 - stop_distance_diff;
 	return stop_distance <= distance;
 }
 
+/**
+ * Displays the current speed on Display
+ *
+ * @param speed the speed to be displayed
+ */
 void displaySpeed(int speed) {
 	// Display leeren
 	gfx_fill(0);
@@ -27,6 +40,9 @@ void displaySpeed(int speed) {
 	gfx_print_text(output);
 }
 
+/**
+ * inits all components
+ */
 void init() {
 	// Aktivierung von Interrupts
 	sei();
